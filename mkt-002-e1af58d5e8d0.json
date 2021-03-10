@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "mkt-002",
+  "private_key_id": "e1af58d5e8d03c447636df10c3e8ce6751d618ed",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDjWtRJR4EJ6CgE\nMV/eQcoe4GqOE+SM8tiIogkoVSM5dUNzikefQhaDTprkLPY9LIyX0Az4kDf/Y/2j\nHxqS9c3FXfVIfoy2iQi+6N/0AxQ3jVTBslVQrSp5ls3CGKll0z3YQ8ogOQNKDq14\nWXGr4IDF2k7y7eu2km9/E2wgUmCJ+yl2EoDdADNyNMKh374HS/4v3S4K6Di2UoUs\nVCbPLIy1qFpPCjbnDg3oZv5xlD8ScsA/wOGDX+N6YgEY2BnBCF3Fsrxxlqms1nIE\n4Swr4s1LewEyZIjE5L59b8vm/pkkGoDtr+tAMqZxwEwwpTXFD+IorPnMuMxWBjVt\nLhRowNvPAgMBAAECggEAb9K62xgKRb8j/3vxdTXSngEvJ5ZtMU44ZmucKXRGkPo2\nJNv8gj5VKFw/Hr9mlYwV0o2H87GreTfLBrJDtcikXtDp1bA4sYcRACU2EaR6CyC+\ncU6vW7DwVUFxDmhm2ShfIMGm5tZj4cb6V1lW6XzQmX/YmO+gofnAUTZSVktuJC6x\nIom0hqSOspoZOhk+0sBR3uC65IwMNK/rXtUdFiNWBB1IOVP9L1MZBvEmaNFgpdCn\nTzDSrkgIPV5lrh44oU78TGZOctwyll/0DkRZ5mqLjImC+rtvZws6r2bL+CcpayHc\nOpn0NKbIBTxh9HnW8k2+khpTbzs+zPRoZXZFlnR/kQKBgQD68ZnpUm7HdRgSz4Oc\nfjbcC3/27m/O+SlvGgoDQ3TaZabPiQpv/QFrdf6YbjwJa0Lv05OeUoMc7sxx9oXj\n7FDiqDmYiI5aUaoy6dasvZCDHoNOYdMTCFsqhbQRSSsvcRcxnGRS3t8n4bKPsSHw\nklk8m4KROn44DtUsh0UbkWTE9QKBgQDn742lPwwxfsP+JLbBxZM25Im9UdEWKwtB\ngf8zEfr6sxhVLS3N6JoHoHATVn+K0BPNT4FiZNQlgO/dyWuF79lxlvbGWFtzUAix\n7aA3tZKmwQdEvNphr+++vOdVy07lt9DJ03ZEy2gTE5m6I/W74Y6xHbeqz3Smermb\n97n2oKvDMwKBgQD21c9fAgaVi0gyuIvs0vmDWIx2h/LS06M99Y8DxsaaTILYgSQT\nI/rRiS71IPlNCoS9ApChmuf8/ad8MdFhcIHfcTm2IBxmGw4fJoRTReNwFgNyhibp\nAb8rBHkqx54C/GqkEgFcwn0e7ZKGZOXNjSbZxt2XnMGqwmxNcIE5rLpCQQKBgQCw\ntL97NaTJlOYoG7qtuSTm/om+lrYxKIxD1ZIkS7+m/4o7Ytdx+JRZ2S9qXE2B6fQc\nSUWvPFixViHqHQpxmgJV24maJjlOipyFSyD1ML5Rk+FAyo2rPYrwDCZIJESxGjHV\ngumpkjtxxU4rFjijcz7uzFBhr/sU143QOZYSQ+l5JwKBgQC0unJPDYJ18StC5vbV\nSr08VDA+7jmQKNBU+zmEa9k6HKn/IpWpkO1QpmB8+bdwNbTJCQ71IBgj7VbvERxg\n7otKnwHVLud5vnd+eL/VYWFZg/qQAoXuMYtP6niFDpvAC0qK5QF67Ubcywe+S5tI\njiFUNfr5pv20/5ZatOKpSQIepg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "terraform-laptop@mkt-002.iam.gserviceaccount.com",
+  "client_id": "113642746793915589242",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/terraform-laptop%40mkt-002.iam.gserviceaccount.com"
+}
