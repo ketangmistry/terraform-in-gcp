@@ -13,6 +13,28 @@ variable "gke_num_nodes" {
   description = "number of gke nodes"
 }
 
+# Assign New Relic Service Account to GCP Project for Monitoring
+
+# Problem 1:
+# Error: Request "Create IAM Members roles/monitoring.viewer serviceAccount:td3jdn50y3p@newrelic-gcp.iam.gserviceaccount.com 
+# for \"project \\\"mkt-002\\\"\"" returned error: Error retrieving IAM policy for project "mkt-002": googleapi: 
+# Error 403: Cloud Resource Manager API has not been used in project 105397217286 before or it is disabled. 
+# Enable it by visiting https://console.developers.google.com/apis/api/cloudresourcemanager.googleapis.com/overview?project=105397217286 then retry. 
+# If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry., accessNotConfigured
+
+# Solution to problem 1 was to activate the Cloud Resource Manager API
+
+# Problem 2:
+# Error: Request "Create IAM Members roles/monitoring.viewer serviceAccount:td3jdn50y3p@newrelic-gcp.iam.gserviceaccount.com for \"project \\\"mkt-002\\\"\"" returned error: 
+# Error applying IAM policy for project "mkt-002": Error setting IAM policy for project "mkt-002": googleapi: Error 403: Policy update access denied., forbidden
+
+
+#resource "google_project_iam_member" "project" {
+#  project = "mkt-002"
+#  role    = "roles/monitoring.viewer"
+#  member  = "serviceAccount:td3jdn50y3p@newrelic-gcp.iam.gserviceaccount.com"
+#}
+
 # GKE cluster
 resource "google_container_cluster" "primary" {
   name     = "${var.project_id}-gke"
@@ -49,11 +71,11 @@ resource "google_container_node_pool" "primary_nodes" {
       "https://www.googleapis.com/auth/cloud_debugger"
     ]
 
-    labels = {
+   labels = {
       env = var.project_id
     }
 
-    # preemptible  = true
+    preemptible  = true
     machine_type = "n1-standard-1"
     tags         = ["gke-node", "${var.project_id}-gke"]
     metadata = {
