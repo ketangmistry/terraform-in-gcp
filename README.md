@@ -1,3 +1,3 @@
 # Provision a GKE Cluster
 
-On my GCP project.
+Within my GCP project mkt-002.
