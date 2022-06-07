@@ -1,3 +1,3 @@
-# Provision a GKE Cluster
+# Terraform in GCP
 
-Within my GCP project mkt-002.
+Terraform my personal GCP project.
