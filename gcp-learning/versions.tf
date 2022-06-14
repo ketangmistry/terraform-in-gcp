@@ -2,7 +2,7 @@ terraform {
 
   # 3. Configure remote backend
   backend "gcs" {
-    bucket  = "store2-mkt-002"
+    bucket  = "store-mkt-002"
     prefix  = "terraform/state"
   }
 
