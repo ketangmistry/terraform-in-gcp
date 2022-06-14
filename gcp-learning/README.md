@@ -1,3 +1,2 @@
-# Terraform in GCP
+# GCP Learning Terraform Files
 
-Terraform my personal GCP project.
