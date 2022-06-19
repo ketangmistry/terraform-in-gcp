@@ -12,3 +12,8 @@ variable "zone" {
   type     = string
   description = "GCP Zone"
 }
+
+variable "prefix" {
+  type     = string
+  description = "Resource prefix"
+}
