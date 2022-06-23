@@ -1,5 +1,5 @@
 variable "credentials_gcp" {
-  type     = string
+  type        = string
   description = "GCP Service Account for Terraform"
 }
 
