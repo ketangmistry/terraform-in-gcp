@@ -8,7 +8,7 @@ output "subnetwork_self_link" {
   description = "GCP Subnetwork Self Link"
 }
 
-output "run_self_link" {
-  value       = module.run_self_link
-  description = "GCP Cloud Run Self Link"
+output "run_status" {
+  value       = module.run.run_status
+  description = "GCP Cloud Run Status"
 }
