@@ -10,6 +10,7 @@ resource "google_cloud_run_service" "o11y-trace-receiver" {
           container_port = 8090
         }
       }
+      service_account_name = "o11y-trace-receiver-sa@manketrix-dev.iam.gserviceaccount.com"
     }
   }
 
@@ -17,4 +18,7 @@ resource "google_cloud_run_service" "o11y-trace-receiver" {
     percent         = 100
     latest_revision = true
   }
+
+  
 }
+
