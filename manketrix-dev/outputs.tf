@@ -13,7 +13,7 @@ output "run_status" {
   description = "GCP Cloud Run Status"
 }
 
-output "o11y_trace_receiver_email" {
-  value = module.iam.o11y_trace_receiver_email
+output "o11y_trace_receiver_email_sa" {
+  value = module.iam.o11y_trace_receiver_email_sa
   description = "Email for service account o11y-trace-receiver"
 }
