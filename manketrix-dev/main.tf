@@ -5,6 +5,14 @@ provider "google" {
   zone        = var.zone
 }
 
+module "iam" {
+  source     = "./modules/iam"
+  project_id = var.project_id
+  region     = var.region
+  zone       = var.zone
+  prefix     = var.prefix
+}
+
 module "networks" {
   source     = "./modules/networks"
   project_id = var.project_id
