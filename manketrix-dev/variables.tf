@@ -8,3 +8,4 @@ variable "region" {}
 variable "zone" {}
 variable "prefix" {}
 variable "location" {}
+variable "project_number" {}
