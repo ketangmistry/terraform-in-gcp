@@ -14,7 +14,7 @@ resource "google_cloud_run_service" "o11y-trace-receiver" {
           name = "NR_INGEST_LICENSE_KEY"
           value_from {
             secret_key_ref {
-              name = google_secret_manager_secret.nr-ingest-license-key.secret_id
+              name = data.google_secret_manager_secret.nr-ingest-license-key.secret_id
               key = "latest"
             }
           }
