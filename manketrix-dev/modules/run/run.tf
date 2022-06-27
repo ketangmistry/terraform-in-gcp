@@ -1,5 +1,5 @@
 data "google_secret_manager_secret" "nr-ingest-license-key" {
-  secret_id = "projects/${var.project_number}/secrets/nr-ingest-license-key"
+  secret_id = "nr-ingest-license-key"
 }
 
 resource "google_cloud_run_service" "o11y-trace-receiver" {
