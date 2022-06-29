@@ -24,3 +24,12 @@ resource "google_pubsub_lite_topic" "pubsub-topic" {
     throughput_reservation = google_pubsub_lite_reservation.pubsub-reservation.name
   }
 }
+
+resource "google_pubsub_lite_subscription" "pubsub-subscription" {
+  name  = "${var.prefix}-subscription"
+  topic = google_pubsub_lite_topic.pubsub-topic.name
+  
+  delivery_config {
+    delivery_requirement = "DELIVER_AFTER_STORED"
+  }
+}
