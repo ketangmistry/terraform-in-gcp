@@ -23,15 +23,6 @@ resource "google_cloud_run_service" "o11y-trace-receiver" {
             }
           }
         }
-        env {
-          name = "PUBSUB_TOPIC"
-          value_from {
-            secret_key_ref {
-              name = data.google_secret_manager_secret.pubsub-topic.secret_id
-              key = "latest"
-            }
-          }
-        }
         ports {
           container_port = 8090
         }
