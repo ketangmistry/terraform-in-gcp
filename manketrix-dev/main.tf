@@ -29,3 +29,12 @@ module "run" {
   zone       = var.zone
   prefix     = var.prefix
 }
+
+module "pubsub" {
+  source     = "./modules/pubsub"
+  project_id = var.project_id
+  project_number = var.project_number
+  region     = var.region
+  zone       = var.zone
+  prefix     = var.prefix
+}

@@ -17,3 +17,8 @@ output "o11y_trace_receiver_sa_email" {
   value = module.iam.o11y_trace_receiver_sa_email
   description = "Email for service account o11y-trace-receiver"
 }
+
+output "pubsub-topic-id" {
+  value = module.pubsub.pubsub-topic-id
+    description = "The GCP Pub/Sub Lite Topic"
+}
