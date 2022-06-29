@@ -13,12 +13,21 @@ resource "google_cloud_run_service" "o11y-trace-receiver" {
   template {
     spec {
       containers {
-        image = "europe-west1-docker.pkg.dev/manketrix-dev/containers/o11y-trace-receiver"
+        image = "${var.region}-docker.pkg.dev/${var.project_id}/containers/o11y-trace-receiver"
         env {
           name = "NR_INGEST_LICENSE_KEY"
           value_from {
             secret_key_ref {
               name = data.google_secret_manager_secret.nr-ingest-license-key.secret_id
+              key = "latest"
+            }
+          }
+        }
+        env {
+          name = "PUBSUB_TOPIC"
+          value_from {
+            secret_key_ref {
+              name = data.google_secret_manager_secret.pubsub-topic.secret_id
               key = "latest"
             }
           }
