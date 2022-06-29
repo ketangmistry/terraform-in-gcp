@@ -14,3 +14,9 @@ resource "google_project_iam_member" "o11y-trace-receiver-iam-pubsub" {
   role    = "roles/pubsublite.publisher"
   member  = "serviceAccount:o11y-trace-receiver-sa@manketrix-dev.iam.gserviceaccount.com"
 }
+
+resource "google_project_iam_member" "o11y-trace-receiver-iam-artifacts" {
+  project = var.project_id
+  role    = "roles/artifactregistry.reader"
+  member  = "serviceAccount:o11y-trace-receiver-sa@manketrix-dev.iam.gserviceaccount.com"
+}
