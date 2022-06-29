@@ -13,7 +13,7 @@ resource "google_cloud_run_service" "o11y-trace-receiver" {
   template {
     spec {
       containers {
-        image = "${var.region}-docker.pkg.dev/${var.project_id}/containers/o11y-trace-receiver"
+        image = "europe-west1-docker.pkg.dev/manketrix-dev/containers/o11y-trace-receiver"
         env {
           name = "NR_INGEST_LICENSE_KEY"
           value_from {
