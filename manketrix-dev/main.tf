@@ -38,3 +38,11 @@ module "pubsub" {
   zone       = var.zone
   prefix     = var.prefix
 }
+
+module "kms" {
+  source     = "./modules/kms"
+  project_id = var.project_id
+  region     = var.region
+  zone       = var.zone
+  prefix     = var.prefix
+}

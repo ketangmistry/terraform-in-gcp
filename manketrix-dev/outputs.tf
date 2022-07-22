@@ -22,3 +22,8 @@ output "pubsub-topic-id" {
   value = module.pubsub.pubsub-topic-id
     description = "The GCP Pub/Sub Lite Topic"
 }
+
+output "kms-name" {
+  value = module.kms.kms-name
+  description = "The KMS key name"
+}
