@@ -32,3 +32,13 @@ variable "gke_node_count" {
   type        = string
   description = "GKE Node Count"
 }
+
+variable "gke_username" {
+  type        = string
+  description = "GKE Control Plane Username"
+}
+
+variable "gke_password" {
+  type        = string
+  description = "GKE Control Plane Password"
+}
