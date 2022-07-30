@@ -9,8 +9,16 @@ variable "zone" {}
 variable "prefix" {}
 variable "location" {}
 variable "project_number" {}
-variable "vpc_name" {}
-variable "subnet_name" {}
+
+variable "vpc_name" {
+  type = string
+  default = "empty-vpc-name"
+}
+
+variable "subnet_name" {
+  type = string
+  default = "empty-subnet-name"
+}
 
 variable "gke_node_count" {
   type        = number
