@@ -1,17 +1,17 @@
 resource "google_pubsub_lite_reservation" "pubsub-reservation" {
-  name = "${var.prefix}-reservation"
-  project = var.project_number
+  name                = "${var.prefix}-reservation"
+  project             = var.project_number
   throughput_capacity = 1
 }
 
 resource "google_pubsub_lite_topic" "pubsub-topic" {
-  name = "${var.prefix}-topic"
+  name    = "${var.prefix}-topic"
   project = var.project_number
 
   partition_config {
     count = 1
     capacity {
-      publish_mib_per_sec = 4
+      publish_mib_per_sec   = 4
       subscribe_mib_per_sec = 8
     }
   }
@@ -28,7 +28,7 @@ resource "google_pubsub_lite_topic" "pubsub-topic" {
 resource "google_pubsub_lite_subscription" "pubsub-subscription" {
   name  = "${var.prefix}-subscription"
   topic = google_pubsub_lite_topic.pubsub-topic.name
-  
+
   delivery_config {
     delivery_requirement = "DELIVER_AFTER_STORED"
   }

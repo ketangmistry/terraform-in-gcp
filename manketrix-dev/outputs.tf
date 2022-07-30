@@ -4,7 +4,7 @@ output "network_self_link" {
 }
 
 output "network_name" {
-  value = module.networks.vpc_name
+  value       = module.networks.vpc_name
   description = "GCP Network Name"
 }
 
@@ -24,16 +24,16 @@ output "run_status" {
 }
 
 output "o11y_trace_receiver_sa_email" {
-  value = module.iam.o11y_trace_receiver_sa_email
+  value       = module.iam.o11y_trace_receiver_sa_email
   description = "Email for service account o11y-trace-receiver"
 }
 
 output "pubsub-topic-id" {
-  value = module.pubsub.pubsub-topic-id
-    description = "The GCP Pub/Sub Lite Topic"
+  value       = module.pubsub.pubsub-topic-id
+  description = "The GCP Pub/Sub Lite Topic"
 }
 
 output "kms-name" {
-  value = module.kms.kms-name
+  value       = module.kms.kms-name
   description = "The KMS key name"
 }

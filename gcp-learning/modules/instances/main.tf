@@ -1,12 +1,12 @@
 resource "google_compute_instance" "instance-1" {
-  name         = "instance-1"
+  name = "instance-1"
 
   # Task 4: Modify and update infrastructure
   # machine_type = "e2-micro"
   machine_type = "n1-standard-2"
 
 
-  zone         = "${var.zone}"
+  zone = var.zone
 
   boot_disk {
     initialize_params {
@@ -15,7 +15,7 @@ resource "google_compute_instance" "instance-1" {
   }
 
   network_interface {
-    network = "${var.project_id}-vpc"
+    network    = "${var.project_id}-vpc"
     subnetwork = "${var.project_id}-subnet"
   }
 
@@ -28,16 +28,16 @@ resource "google_compute_instance" "instance-1" {
 
 }
 
-  # Task 4: Modify and update infrastructure
+# Task 4: Modify and update infrastructure
 resource "google_compute_instance" "instance-2" {
-  name         = "instance-2"
+  name = "instance-2"
 
 
   machine_type = "n1-standard-2"
 
   # Task 6: Use a module from a registry
   # zone         = "europe-west1-b"
-  zone         = "us-central1-a"
+  zone = "us-central1-a"
 
   boot_disk {
     initialize_params {
@@ -52,8 +52,8 @@ resource "google_compute_instance" "instance-2" {
   # }
 
   network_interface {
-     network = "gcp-learning-terraform-public-module"
-     subnetwork = "subnet-01"
+    network    = "gcp-learning-terraform-public-module"
+    subnetwork = "subnet-01"
   }
 
   metadata_startup_script = <<-EOT

@@ -13,7 +13,7 @@ variable "vpc_name" {}
 variable "subnet_name" {}
 
 variable "gke_node_count" {
-  type = number
-  default = 3
+  type        = number
+  default     = 3
   description = "Default number of GKE nodes in pool"
 }
