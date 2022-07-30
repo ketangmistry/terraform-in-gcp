@@ -9,7 +9,7 @@ output "network_name" {
 }
 
 output "subnet_self_link" {
-  value       = module.networks.subnetwork_self_link
+  value       = module.networks.subnet_self_link
   description = "GCP Subnetwork Self Link"
 }
 
