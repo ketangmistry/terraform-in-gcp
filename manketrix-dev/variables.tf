@@ -13,12 +13,12 @@ variable "gke_username" {}
 variable "gke_password" {}
 
 variable "vpc_name" {
-  type = string
+  type    = string
   default = "empty-vpc-name"
 }
 
 variable "subnet_name" {
-  type = string
+  type    = string
   default = "empty-subnet-name"
 }
 

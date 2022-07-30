@@ -56,4 +56,6 @@ module "gke" {
   vpc_name       = module.networks.vpc_name
   subnet_name    = module.networks.subnet_name
   gke_node_count = var.gke_node_count
+  gke_username   = var.gke_username
+  gke_password   = vari.gke_password
 }
