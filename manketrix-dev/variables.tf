@@ -9,6 +9,8 @@ variable "zone" {}
 variable "prefix" {}
 variable "location" {}
 variable "project_number" {}
+variable "gke_username" {}
+variable "gke_password" {}
 
 variable "vpc_name" {
   type = string
