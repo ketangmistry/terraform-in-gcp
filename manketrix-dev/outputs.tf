@@ -3,9 +3,19 @@ output "network_self_link" {
   description = "GCP Network Self Link"
 }
 
-output "subnetwork_self_link" {
+output "network_name" {
+  value = module.networks.vpc_name
+  description = "GCP Network Name"
+}
+
+output "subnet_self_link" {
   value       = module.networks.subnetwork_self_link
   description = "GCP Subnetwork Self Link"
+}
+
+output "subnet_name" {
+  value       = module.networks.subnet_name
+  description = "GCP Subnetwork Name"
 }
 
 output "run_status" {

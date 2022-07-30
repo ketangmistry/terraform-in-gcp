@@ -3,7 +3,7 @@ resource "google_container_cluster" "primary" {
   location = var.region
 
   remove_default_node_pool = true
-  initial_node_count       = var.node_count
+  initial_node_count       = var.gke_node_count
 
   network    = var.vpc_name
   subnetwork = var.subnet_name
@@ -22,7 +22,7 @@ resource "google_container_node_pool" "primary_nodes" {
   name       = "${var.project_id}-node-pool"
   location   = var.region
   cluster    = google_container_cluster.primary.name
-  node_count = var.gke_num_nodes
+  node_count = var.gke_node_count
 
   node_config {
     oauth_scopes = [
@@ -33,7 +33,7 @@ resource "google_container_node_pool" "primary_nodes" {
     ]
 
     labels = {
-      env = var.project_id
+      project_id = var.project_id
     }
 
     preemptible  = true

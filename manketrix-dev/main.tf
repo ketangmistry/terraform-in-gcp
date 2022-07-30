@@ -46,3 +46,14 @@ module "kms" {
   zone       = var.zone
   prefix     = var.prefix
 }
+
+module "gke" {
+  source     = "./modules/gke"
+  project_id = var.project_id
+  region     = var.region
+  zone       = var.zone
+  prefix     = var.prefix
+  vpc_name = module.networks.vpc_name
+  subnet_name = module.networks.subnet_name
+  gke_node_count = var.gke_node_count
+}
