@@ -4,8 +4,8 @@ output "vpc_self_link" {
 }
 
 output "vpc_name" {
-  value           = google_compute_network.vpc.name
-  descdescription = "GCP VPC Name"
+  value       = google_compute_network.vpc.name
+  description = "GCP VPC Name"
 }
 
 output "subnet_self_link" {
