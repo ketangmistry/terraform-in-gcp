@@ -24,6 +24,6 @@ variable "subnet_name" {
 
 variable "gke_node_count" {
   type        = number
-  default     = 2
+  default     = 1
   description = "Default number of GKE nodes in pool"
 }
