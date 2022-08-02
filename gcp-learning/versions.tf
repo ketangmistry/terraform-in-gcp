@@ -2,8 +2,8 @@ terraform {
 
   # 3. Configure remote backend
   backend "gcs" {
-    bucket  = "store-mkt-002"
-    prefix  = "terraform/state"
+    bucket = "store-mkt-002"
+    prefix = "terraform/state"
   }
 
   required_version = "~> 1.2.2"

@@ -1,28 +1,28 @@
 provider "google" {
   project = var.project_id
-  region = var.region
-  zone = var.zone
+  region  = var.region
+  zone    = var.zone
 }
 
 module "network" {
-  source = "./modules/network"
+  source     = "./modules/network"
   project_id = var.project_id
-  region = var.region
-  zone = var.zone
+  region     = var.region
+  zone       = var.zone
 }
 
 // 1. Create an instance template
 resource "google_compute_instance_template" "instance-template-1" {
-  name = "instance-template-1"
+  name         = "instance-template-1"
   machine_type = "f1-micro"
 
   disk {
-    source_image      = "debian-cloud/debian-9"
-    boot              = true
+    source_image = "debian-cloud/debian-9"
+    boot         = true
   }
 
   network_interface {
-    network = "mkt-002-vpc"
+    network    = "mkt-002-vpc"
     subnetwork = "mkt-002-subnet"
 
     access_config {
@@ -37,7 +37,7 @@ resource "google_compute_instance_template" "instance-template-1" {
 
 // 2. Create a target pool.
 resource "google_compute_target_pool" "target-pool-1" {
-  name = "target-pool-1"
+  name          = "target-pool-1"
   health_checks = [google_compute_http_health_check.health-check-1.id]
 }
 
@@ -49,7 +49,7 @@ resource "google_compute_instance_group_manager" "managed-instance-group-1" {
   zone               = var.zone
 
   version {
-    instance_template  = google_compute_instance_template.instance-template-1.id
+    instance_template = google_compute_instance_template.instance-template-1.id
   }
 
   target_pools = [google_compute_target_pool.target-pool-1.id]
@@ -77,7 +77,7 @@ resource "google_compute_firewall" "tf-firewall" {
 
 // 5. Create a health check
 resource "google_compute_http_health_check" "health-check-1" {
-  name         = "health-check-1"
+  name = "health-check-1"
 }
 
 // 6. Create a backend service, and attach the managed instance group with named port (http:80)
@@ -99,14 +99,14 @@ resource "google_compute_url_map" "url-map-1" {
 
 // 7b. Create a URL map, and target the HTTP proxy to route requests to your URL map.
 resource "google_compute_target_http_proxy" "target-http-proxy-1" {
-  name     = "target-http-proxy-1"
-  url_map  = google_compute_url_map.url-map-1.id
+  name    = "target-http-proxy-1"
+  url_map = google_compute_url_map.url-map-1.id
 }
 
 // 8. Create a forwarding rule.
 resource "google_compute_global_forwarding_rule" "forwarding-rule-1" {
-  name                  = "forwarding-rule-1"
-  target = google_compute_target_http_proxy.target-http-proxy-1.id
+  name       = "forwarding-rule-1"
+  target     = google_compute_target_http_proxy.target-http-proxy-1.id
   port_range = "80"
 }
 

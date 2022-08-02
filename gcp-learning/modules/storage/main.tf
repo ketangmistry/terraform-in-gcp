@@ -1,7 +1,7 @@
 resource "google_storage_bucket" "store2-mkt-002" {
-  name          = "store2-mkt-002"
+  name = "store2-mkt-002"
 
-  location      = "EU"
+  location = "EU"
 
   force_destroy = true
 

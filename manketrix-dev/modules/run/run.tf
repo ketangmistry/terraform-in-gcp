@@ -19,7 +19,7 @@ resource "google_cloud_run_service" "o11y-trace-receiver" {
           value_from {
             secret_key_ref {
               name = data.google_secret_manager_secret.nr-ingest-license-key.secret_id
-              key = "latest"
+              key  = "latest"
             }
           }
         }
@@ -28,7 +28,7 @@ resource "google_cloud_run_service" "o11y-trace-receiver" {
           value_from {
             secret_key_ref {
               name = data.google_secret_manager_secret.pubsub-topic.secret_id
-              key = "latest"
+              key  = "latest"
             }
           }
         }
@@ -44,6 +44,6 @@ resource "google_cloud_run_service" "o11y-trace-receiver" {
     percent         = 100
     latest_revision = true
   }
-  
+
 }
 

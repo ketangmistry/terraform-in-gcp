@@ -22,21 +22,21 @@ module "networks" {
 }
 
 module "run" {
-  source     = "./modules/run"
-  project_id = var.project_id
+  source         = "./modules/run"
+  project_id     = var.project_id
   project_number = var.project_number
-  region     = var.region
-  zone       = var.zone
-  prefix     = var.prefix
+  region         = var.region
+  zone           = var.zone
+  prefix         = var.prefix
 }
 
 module "pubsub" {
-  source     = "./modules/pubsub"
-  project_id = var.project_id
+  source         = "./modules/pubsub"
+  project_id     = var.project_id
   project_number = var.project_number
-  region     = var.region
-  zone       = var.zone
-  prefix     = var.prefix
+  region         = var.region
+  zone           = var.zone
+  prefix         = var.prefix
 }
 
 module "kms" {
@@ -45,4 +45,17 @@ module "kms" {
   region     = var.region
   zone       = var.zone
   prefix     = var.prefix
+}
+
+module "gke" {
+  source         = "./modules/gke"
+  project_id     = var.project_id
+  region         = var.region
+  zone           = var.zone
+  prefix         = var.prefix
+  vpc_name       = module.networks.vpc_name
+  subnet_name    = module.networks.subnet_name
+  gke_node_count = var.gke_node_count
+  gke_username   = var.gke_username
+  gke_password   = var.gke_password
 }
