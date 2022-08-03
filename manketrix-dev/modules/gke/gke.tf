@@ -22,6 +22,8 @@ resource "google_container_node_pool" "primary_nodes" {
   node_count = var.gke_node_count
 
   node_config {
+    service_account = "gke-551@manketrix-dev.iam.gserviceaccount.com"
+
     oauth_scopes = [
       "https://www.googleapis.com/auth/logging.write",
       "https://www.googleapis.com/auth/monitoring",
